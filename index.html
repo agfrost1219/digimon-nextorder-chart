@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<body>
+    <div class="input-group">
+        <input type="text" class="search form-control" placeholder="Search" />
+        <input class="btn btn-info collapseBtn" type="button" value="Collapse All" />
+    </div>
+    <div class="col-md-9 col-md-offset-1" id="digimon"></div>
+
+    <script id="newTemplate" type="text/x-jsrender">
+        {^{for}}
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                {{:Name}} <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+            </div>
+                <div class="tablePanel">
+                <table id="{{:Name}}" class="table">
+                    <th>Evolution</th>
+                    <th>HP</th>
+                    <th>MP</th>
+                    <th>Strength</th>
+                    <th>Stamina</th>
+                    <th>Wisdom</th>
+                    <th>Speed</th>
+                    <th>Weight</th>
+                    <th>Mistakes</th>
+                    <th>Bond</th>
+                    <th>Discipline</th>
+                    <th>Wins</th>
+                    <th>Key Digimon</th>
+                    <th>Key Points</th>
+                    {^{for Evolution}}
+                    <tr>
+                    <td>{{>#data}}</td>
+                    <td>{{getStat:#data "HP"}}</td>
+                    <td>{{getStat:#data "MP"}}</td>
+                    <td>{{getStat:#data "Strength"}}</td>
+                    <td>{{getStat:#data "Stamina"}}</td>
+                    <td>{{getStat:#data "Wisdom"}}</td>
+                    <td>{{getStat:#data "Speed"}}</td>
+                    <td>{{getStat:#data "Weight"}}</td>
+                    <td>{{getStat:#data "Mistakes"}}</td>
+                    <td>{{getStat:#data "Bond"}}</td>
+                    <td>{{getStat:#data "Discipline"}}</td>
+                    <td>{{getStat:#data "Wins"}}</td>
+                    <td>{{getStat:#data "Key Digimon"}}</td>
+                    <td>{{getStat:#data "Key Points"}}</td>
+                    </tr>
+                    {{/for}}
+            </table>
+            </div>
+            </div>
+        </div>
+        {{/for}}
+
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.83/jsrender.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsviews/0.9.83/jsviews.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+
+</html>

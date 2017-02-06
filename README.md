@@ -1,3 +1,3 @@
 # digimon-nextorder-chart
 
-Test
+https://agfrost1219.github.io/digimon-nextorder-chart/

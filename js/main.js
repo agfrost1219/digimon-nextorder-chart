@@ -11,7 +11,7 @@ $.views.converters("getStat", function(val, stat) {
 $("form").submit(function(e) {
   e.preventDefault();
   var filtered = DigimonEvolutions.filter(function (el) {
-    return el.Name.indexOf($(".search").val()) > -1 ||
+    return el.Name.toUpperCase().indexOf($(".search").val().toUpperCase()) > -1 ||
            el.Evolution.indexOf($(".search").val()) > -1 ;
     });
   var tmpl = $.templates("#newTemplate");

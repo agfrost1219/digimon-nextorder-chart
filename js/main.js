@@ -8,17 +8,11 @@ $.views.converters("getStat", function(val, stat) {
   return val
 });
 
-
-
-var digTmpl = $.templates("#newTemplate");
-var html = digTmpl.render(DigimonEvolutions);
-$("#digimon").html(html);
-
-
-$(".search").change(function(e) {
+$("form").submit(function(e) {
+  e.preventDefault();
   var filtered = DigimonEvolutions.filter(function (el) {
-    return el.Name.indexOf($(e.target).val()) > -1 ||
-           el.Evolution.indexOf($(e.target).val()) > -1 ;
+    return el.Name.indexOf($(".search").val()) > -1 ||
+           el.Evolution.indexOf($(".search").val()) > -1 ;
     });
   var tmpl = $.templates("#newTemplate");
   var html = tmpl.render(filtered);
@@ -38,17 +32,3 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 		$this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
 	}
 })
-
-$(".collapseBtn").click(function() {
-  if($(this).val() == "Collapse All"){
-    $(".panel-heading").parents('.panel').find('.tablePanel').slideUp();
-		$(".panel-heading").addClass('panel-collapsed');
-    $(".panel-heading").find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-    $(this).val("Expand All");
-  }else{
-    $(".panel-heading").parents('.panel').find('.tablePanel').slideDown();
-		$(".panel-heading").removeClass('panel-collapsed');
-		$(".panel-heading").find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up'); 
-    $(this).val("Collapse All");
-  }
-});

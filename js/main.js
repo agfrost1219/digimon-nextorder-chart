@@ -32,3 +32,14 @@ $(document).on('click', '.panel-heading span.clickable', function(e){
 		$this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
 	}
 })
+
+
+function goToEvolution(name){
+  var filtered = DigimonEvolutions.filter(function (el) {
+    return el.Name.toUpperCase() == name.toUpperCase()
+    });
+  var tmpl = $.templates("#newTemplate");
+  var html = tmpl.render(filtered);
+  $("#digimon").html(html);
+  $(".search").val(name);
+}

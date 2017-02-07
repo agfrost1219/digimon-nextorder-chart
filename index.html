@@ -68,7 +68,7 @@
             </thead>
           	{^{for Evolution}}
             <tr>
-              <td>{{>#data}}</td>
+              <td><a onclick="goToEvolution('{{>#data}}')" class="goToEvo">{{>#data}}</a></td>
               <td>{{getStat:#data "HP"}}</td>
               <td>{{getStat:#data "MP"}}</td>
               <td>{{getStat:#data "Strength"}}</td>

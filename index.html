@@ -49,6 +49,7 @@
 		<div class="tablePanel table-responsive">
           <table id="{{:Name}}" class="table table-striped ">
             <thead class="thead">
+              
               <tr>
                 <th>Evolution</th>
                 <th>HP</th>
@@ -66,6 +67,24 @@
                 <th>Key Points</th>
               </tr>
             </thead>
+            {^{if ~getStat(Name, 'Key Points') != ""}}
+              <tr class="info">
+                <td>{{:Name}}</td>
+                <td>{{getStat:Name "HP"}}</td>
+                <td>{{getStat:Name "MP"}}</td>
+                <td>{{getStat:Name "Strength"}}</td>
+                <td>{{getStat:Name "Stamina"}}</td>
+                <td>{{getStat:Name "Wisdom"}}</td>
+                <td>{{getStat:Name "Speed"}}</td>
+                <td>{{getStat:Name "Weight"}}</td>
+                <td>{{getStat:Name "Mistakes"}}</td>
+                <td>{{getStat:Name "Bond"}}</td>
+                <td>{{getStat:Name "Discipline"}}</td>
+                <td>{{getStat:Name "Wins"}}</td>
+                <td>{{getStat:Name "Key Digimon"}}</td>
+                <td>{{getStat:Name "Key Points"}}</td>
+              </tr>
+            {{/if}}
           	{^{for Evolution}}
             <tr>
               <td><a onclick="goToEvolution('{{>#data}}')" class="goToEvo">{{>#data}}</a></td>

@@ -842,7 +842,9 @@ var DigimonEvolutions = [
     "Evolution": [
       "MetalGarurumon",
       "Jijimon",
-      "Kentaurosmon"
+      "Kentaurosmon",
+      "MagnaGarurumon",
+      "Duftmon"
     ]
   },
   {
